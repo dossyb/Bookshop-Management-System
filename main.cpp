@@ -37,7 +37,7 @@ book_data read_book()
     result.price = read_double("Enter the book's price: ");
     result.stock = read_integer("Enter how many copies are in stock: ");
 
-    system("clear");
+    system("CLS");
     write_line("Book added.");
     write_line(" ");
 
@@ -92,7 +92,7 @@ void update_book(book_data &book)
     string genre; 
     do
     {
-        system("clear");  
+        system("CLS");  
         write_line(" ");
         write_line("== Update Book ==");
         write_line(" ");
@@ -126,7 +126,7 @@ void update_book(book_data &book)
             break;
         }
     } while (option != FINISH_BOOK_UPDATE); 
-    system("clear");
+    system("CLS");
 }
 
 enum shop_update_option
@@ -163,7 +163,7 @@ shop_update_option read_shop_update_option()
 
 void write_inventory(const shop_data &shop)
 {
-    system("clear");
+    system("CLS");
     write_line(" ");
     write_line("============== Shop Inventory ================");
     for (int i = 0; i < shop.books.size(); i++)
@@ -176,7 +176,7 @@ void write_inventory(const shop_data &shop)
 
 int select_book(const shop_data &shop)
 {
-    system("clear");
+    system("CLS");
     int sel;
     write_line(" ");
     for (int i = 0; i < shop.books.size(); i++)
@@ -202,7 +202,7 @@ void delete_book(shop_data &shop, int index)
         shop.books[index] = shop.books[last_index];
         shop.books.pop_back();
     }
-    system("clear");
+    system("CLS");
     write_line("Book deleted.");
     write_line(" ");
 }
@@ -211,7 +211,7 @@ void query_book(const shop_data &shop)
 {
     book_data book;
     book = shop.books[select_book(shop)];
-    system("clear");
+    system("CLS");
     write_line(" ");
     write_book_full(book);
     write_line(" ");
@@ -227,7 +227,7 @@ void update_shop(shop_data &shop)
 {
     shop_update_option option;
     int sel;
-    system("clear");
+    system("CLS");
     do
     {
         write_line("==============================================");
